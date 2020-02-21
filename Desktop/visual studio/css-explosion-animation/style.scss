@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+body{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    font-weight: bold;
+    color:white;
+}
+.boom{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    &:after{
+        content:"BOOM";
+        font-size: 200px;
+        text-align: center;
+        color:red;
+        animation:explosion 10s linear reverse infinite;
+        
+    }
+}
+@keyframes explosion{
+   @for $i from 1 through 10{
+       $number : $i *10;
+       $percent:$number + "%";
+       #{$percent}{
+           content:$i + "";
+            color:white;
+            font-size:$i * 20px;
+        }
+   }
+}
+// @keyframes explosion { 
+//     @for $i from 1 through 10 {
+//       $number: $i * 10;
+//       $percent: $number + "%";
+//       #{$percent} {
+//         content: $i + "";
+//         color: white;
+//         font-size: $i * 20px;
+//       }
+//     }
+//   }
